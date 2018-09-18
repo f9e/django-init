@@ -104,7 +104,7 @@ def test_user_password_reset_and_confirm(client, settings, mocker):
     token = kwargs['context']['token']
 
     # confirm we can reset password using context values
-    new_password = 'paSswOrd2'
+    new_password = 'paSsw0rd2'[::-1] # reversed, i.e. '2dr0wsSap'
     password_reset_confirm_data = {
         'new_password': new_password,
         'token': token
